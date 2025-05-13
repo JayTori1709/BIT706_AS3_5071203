@@ -1,0 +1,15 @@
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/bin/Debug/net8.0/Registry.Data.deps.json
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/bin/Debug/net8.0/Registry.Data.runtimeconfig.json
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/bin/Debug/net8.0/Registry.Data.dll
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/bin/Debug/net8.0/Registry.Data.pdb
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.csproj.AssemblyReference.cache
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.AssemblyInfoInputs.cache
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.AssemblyInfo.cs
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.csproj.CoreCompileInputs.cache
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.sourcelink.json
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.dll
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/refint/Registry.Data.dll
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.pdb
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/Registry.Data.genruntimeconfig.cache
+/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/obj/Debug/net8.0/ref/Registry.Data.dll
