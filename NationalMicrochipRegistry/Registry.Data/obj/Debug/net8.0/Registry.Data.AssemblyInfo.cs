@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Registry.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40ea866c4cc5808a9702b5226e4296eb1ee4e42c")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40926a8ab5b6bbaed3c696c194f4f8f24d5fa155")]
+>>>>>>> exp1
 [assembly: System.Reflection.AssemblyProductAttribute("Registry.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Registry.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
