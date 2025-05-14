@@ -12,7 +12,7 @@ namespace Registry.Tests
         public void AddUser_ShouldAddUserToDatabase()
         {
             var options = new DbContextOptionsBuilder<RegistryDbContext>()
-                .UseInMemoryDatabase("Test_AddUser")
+                .UseInMemoryDatabase("TestDB")
                 .Options;
 
             using var context = new RegistryDbContext(options);
