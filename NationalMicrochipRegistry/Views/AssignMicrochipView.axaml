@@ -1,0 +1,10 @@
+<UserControl xmlns="https://github.com/avaloniaui">
+  <StackPanel>
+    <TextBlock Text="Assign Microchip" FontSize="20" Margin="10"/>
+    <ComboBox Items="{Binding Animals}" SelectedItem="{Binding SelectedAnimal}" 
+              DisplayMemberPath="Name" Margin="5"/>
+    <ComboBox Items="{Binding AvailableChips}" SelectedItem="{Binding SelectedChip}" 
+              DisplayMemberPath="SerialNumber" Margin="5"/>
+    <Button Content="Assign" Command="{Binding AssignCommand}" Margin="5"/>
+  </StackPanel>
+</UserControl>
