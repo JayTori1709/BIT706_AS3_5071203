@@ -3,7 +3,8 @@
              x:Class="RegistryApp.Views.ManageUsersView">
   <StackPanel>
     <TextBlock Text="Manage Users" FontSize="20" Margin="10"/>
-    <ItemsControl Items="{Binding Users}">
+    <ItemsControl ItemsSource="{Binding Users}">
+
       <ItemsControl.ItemTemplate>
         <DataTemplate>
           <StackPanel Orientation="Horizontal" Margin="5">

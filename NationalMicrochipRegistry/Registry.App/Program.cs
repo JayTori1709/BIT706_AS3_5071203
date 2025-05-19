@@ -1,17 +1,19 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Registry.Data;
+﻿using Avalonia;
+using Avalonia.ReactiveUI;
 
-
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices((context, services) =>
+namespace RegistryApp
+{
+    internal class Program
     {
-        var connStr = "server=localhost;database=RegistryDB;user=root;password=l3nardw12";
-        services.AddDbContext<RegistryDbContext>(options =>
-            options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
-    })
-    .Build();
+        // App entry point
+        public static void Main(string[] args) =>
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
 
-Console.WriteLine("✅ Data layer configured. You can now create migrations and seed the database.");
+        // Avalonia app builder
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>()
+                         .UsePlatformDetect()
+                         .LogToTrace()
+                         .UseReactiveUI();
+    }
+}

@@ -1,4 +1,3 @@
-using System;
 using Avalonia.Controls;
 
 namespace RegistryApp
@@ -8,11 +7,7 @@ namespace RegistryApp
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+            
         }
     }
 }

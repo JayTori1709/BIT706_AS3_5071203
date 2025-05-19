@@ -1,4 +1,3 @@
-using System;
 using Avalonia.Controls;
 
 namespace RegistryApp.Views
@@ -8,11 +7,6 @@ namespace RegistryApp.Views
         public LoginView()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
         }
     }
 }
