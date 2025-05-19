@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="RegistryApp.Views.ManageUsersView">
+  <StackPanel>
+    <TextBlock Text="Manage Users" FontSize="20" Margin="10"/>
+    <ItemsControl Items="{Binding Users}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock Text="{Binding Username}" Width="120"/>
+            <TextBlock Text="{Binding Role}" Width="80"/>
+            <Button Content="Delete" Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    CommandParameter="{Binding}" Margin="5"/>
+          </StackPanel>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <Button Content="Add User" Command="{Binding AddUserCommand}" Margin="5"/>
+  </StackPanel>
+</UserControl>

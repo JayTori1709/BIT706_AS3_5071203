@@ -1,4 +1,9 @@
 is_global = true
+build_property.AvaloniaNameGeneratorIsEnabled = true
+build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
+build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
+build_property.AvaloniaNameGeneratorFilterByPath = *
+build_property.AvaloniaNameGeneratorFilterByNamespace = *
 build_property.TargetFramework = net8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -13,3 +18,21 @@ build_property.EnableComHosting =
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/Views/AssignMicrochipView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/Views/DashboardView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/Views/LoginView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/Views/ManageUsersView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.App/Views/RegisterAnimalView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
