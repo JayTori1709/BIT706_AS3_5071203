@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Y/9JCgc5my4=",
+  "dgSpecHash": "F7PKcOTpQ0E=",
   "success": true,
   "projectFilePath": "/Users/jaydenwood/Documents/BIT706_AS3_5071203/NationalMicrochipRegistry/Registry.Data/Registry.Data.csproj",
   "expectedPackageFiles": [
@@ -42,8 +42,8 @@
     "/Users/jaydenwood/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/jaydenwood/.nuget/packages/system.text.encoding.codepages/6.0.0/system.text.encoding.codepages.6.0.0.nupkg.sha512",
     "/Users/jaydenwood/.nuget/packages/system.threading.channels/6.0.0/system.threading.channels.6.0.0.nupkg.sha512",
-    "/Users/jaydenwood/.nuget/packages/microsoft.netcore.app.ref/8.0.15/microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
-    "/Users/jaydenwood/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512"
+    "/Users/jaydenwood/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512",
+    "/Users/jaydenwood/.nuget/packages/microsoft.netcore.app.ref/8.0.15/microsoft.netcore.app.ref.8.0.15.nupkg.sha512"
   ],
   "logs": []
 }
