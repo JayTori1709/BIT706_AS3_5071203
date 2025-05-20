@@ -29,8 +29,8 @@
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.caching.memory/8.0.1/lib/net8.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
-/Users/jaydenwood/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.5/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
-/Users/jaydenwood/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.5/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/jaydenwood/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.2/lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/jaydenwood/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.1/lib/net8.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.2/lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.logging/8.0.1/lib/net8.0/Microsoft.Extensions.Logging.dll
 /Users/jaydenwood/.nuget/packages/microsoft.extensions.options/8.0.2/lib/net8.0/Microsoft.Extensions.Options.dll

@@ -1,26 +1,28 @@
 using ReactiveUI;
 
-
 namespace RegistryApp.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
-{
-    public static MainWindowViewModel Instance { get; private set; }
-
-    private ViewModelBase _currentView;
-    public ViewModelBase CurrentView
     {
-        get => _currentView;
-        set => this.RaiseAndSetIfChanged(ref _currentView, value);
-    }
+        private static MainWindowViewModel _instance;
+        public static MainWindowViewModel Instance => _instance ??= new MainWindowViewModel();
 
-    public MainWindowViewModel()
-    {
-        Instance = this;
+        private ViewModelBase _currentView;
+        public ViewModelBase CurrentView
+        {
+            get => _currentView;
+            set => this.RaiseAndSetIfChanged(ref _currentView, value);
+        }
 
-        var loginVM = new LoginViewModel();
-        loginVM.LoginSucceeded += () => CurrentView = new DashboardViewModel();
-        CurrentView = loginVM;
+        private MainWindowViewModel()
+        {
+            var loginVM = new LoginViewModel();
+            loginVM.LoginSucceeded += () =>
+            {
+                CurrentView = new DashboardViewModel();
+            };
+
+            CurrentView = loginVM;
+        }
     }
-}
 }

@@ -33,6 +33,9 @@ namespace Registry.Data.Migrations
                     b.Property<string>("Breed")
                         .HasColumnType("longtext");
 
+                    b.Property<int?>("MicrochipId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -46,6 +49,9 @@ namespace Registry.Data.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MicrochipId")
+                        .IsUnique();
 
                     b.ToTable("Animals");
                 });
@@ -86,14 +92,15 @@ namespace Registry.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<int>("MicrochipId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SerialNumber")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AnimalId");
 
                     b.HasIndex("SerialNumber")
                         .IsUnique();
@@ -130,12 +137,17 @@ namespace Registry.Data.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("Registry.Data.Models.Animal", b =>
+                {
+                    b.HasOne("Registry.Data.Models.Microchip", "AssignedMicrochip")
+                        .WithOne("AssignedAnimal")
+                        .HasForeignKey("Registry.Data.Models.Animal", "MicrochipId");
+
+                    b.Navigation("AssignedMicrochip");
+                });
+
             modelBuilder.Entity("Registry.Data.Models.Microchip", b =>
                 {
-                    b.HasOne("Registry.Data.Models.Animal", "AssignedAnimal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId");
-
                     b.Navigation("AssignedAnimal");
                 });
 #pragma warning restore 612, 618
