@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Registry.Data;
 
@@ -11,9 +12,11 @@ using Registry.Data;
 namespace Registry.Data.Migrations
 {
     [DbContext(typeof(RegistryDbContext))]
-    partial class RegistryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250520032249_AddClinicIdToAnimal")]
+    partial class AddClinicIdToAnimal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

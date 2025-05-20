@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using Registry.Data;
 using RegistryApp.ViewModels;
 using RegistryApp.Views;
+using Registry.Data.Services;
+using System.Linq;
+using Registry.Data.Models;
 
 namespace RegistryApp
 {
@@ -30,6 +33,15 @@ namespace RegistryApp
 
                 var provider = services.BuildServiceProvider();
                 DbContext = provider.GetRequiredService<RegistryDbContext>();
+
+                var clinicService = new ClinicService(DbContext);
+                if (!DbContext.Clinics.Any())
+                {
+                    clinicService.AddClinic(new Clinic { Name = "CityVet" });
+                    clinicService.AddClinic(new Clinic { Name = "PawsCare" });
+                }
+
+
 
                 desktop.MainWindow = new MainWindow
                 {
