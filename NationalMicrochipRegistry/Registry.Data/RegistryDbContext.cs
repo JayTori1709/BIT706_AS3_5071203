@@ -24,5 +24,12 @@ public class RegistryDbContext : DbContext
         modelBuilder.Entity<Microchip>()
             .HasIndex(m => m.SerialNumber)
             .IsUnique();
+
+        // Configure the relationship between Animal and Microchip
+        modelBuilder.Entity<Animal>()
+            .HasOne(a => a.AssignedMicrochip) // An Animal has one AssignedMicrochip
+            .WithOne(m => m.AssignedAnimal) // A Microchip has one AssignedAnimal
+            .HasForeignKey<Animal>(a => a.MicrochipId) // Foreign key is in Animal
+            .IsRequired(false); // This is important: MicrochipId is nullable
     }
 }

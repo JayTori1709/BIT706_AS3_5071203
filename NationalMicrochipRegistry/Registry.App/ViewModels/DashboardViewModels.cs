@@ -1,21 +1,31 @@
 using ReactiveUI;
 using System.Reactive;
+using RegistryApp.ViewModels;
 
 namespace RegistryApp.ViewModels
 {
     public class DashboardViewModel : ViewModelBase
     {
-        public bool IsAdmin { get; set; } = true;
-
-        public ReactiveCommand<Unit, Unit> NavigateRegisterAnimal { get; }
-        public ReactiveCommand<Unit, Unit> NavigateAssignMicrochip { get; }
-        public ReactiveCommand<Unit, Unit> NavigateManageUsers { get; }
+        public ReactiveCommand<Unit, Unit> RegisterAnimalCommand { get; }
+        public ReactiveCommand<Unit, Unit> AssignMicrochipCommand { get; }
+        public ReactiveCommand<Unit, Unit> ManageUsersCommand { get; }
 
         public DashboardViewModel()
         {
-            NavigateRegisterAnimal = ReactiveCommand.Create(() => { /* Navigate logic */ });
-            NavigateAssignMicrochip = ReactiveCommand.Create(() => { /* Navigate logic */ });
-            NavigateManageUsers = ReactiveCommand.Create(() => { /* Navigate logic */ });
+            RegisterAnimalCommand = ReactiveCommand.Create(() =>
+            {
+                MainWindowViewModel.Instance.CurrentView = new RegisterAnimalViewModel();
+            });
+
+            AssignMicrochipCommand = ReactiveCommand.Create(() =>
+            {
+                MainWindowViewModel.Instance.CurrentView = new AssignMicrochipViewModel();
+            });
+
+            ManageUsersCommand = ReactiveCommand.Create(() =>
+            {
+                MainWindowViewModel.Instance.CurrentView = new ManageUsersViewModel();
+            });
         }
     }
 }

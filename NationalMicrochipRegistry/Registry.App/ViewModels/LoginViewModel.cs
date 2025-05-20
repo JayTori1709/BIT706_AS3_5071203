@@ -1,5 +1,7 @@
 using ReactiveUI;
+using System;
 using System.Reactive;
+using Registry.Data.Services;
 
 namespace RegistryApp.ViewModels
 {
@@ -36,18 +38,20 @@ namespace RegistryApp.ViewModels
 
         public ReactiveCommand<Unit, Unit> LoginCommand { get; }
 
+        public event Action LoginSucceeded;
+
         public LoginViewModel()
         {
             LoginCommand = ReactiveCommand.Create(() =>
             {
                 if (Username == "admin" && Password == "password")
                 {
-                    HasError = false;
+                    LoginSucceeded?.Invoke();
                 }
                 else
                 {
-                    ErrorMessage = "Invalid credentials.";
                     HasError = true;
+                    ErrorMessage = "Invalid username or password.";
                 }
             });
         }

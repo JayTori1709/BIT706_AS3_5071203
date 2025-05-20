@@ -4,34 +4,40 @@ using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Registry.Data;
+using RegistryApp.ViewModels;
 
 namespace RegistryApp
 {
     public class App : Application
     {
+        public static RegistryDbContext DbContext { get; private set; }
+
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
         }
 
-        public override void OnFrameworkInitializationCompleted()
+      public override void OnFrameworkInitializationCompleted()
+{
+    if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+    {
+        var services = new ServiceCollection();
+        var connStr = "server=localhost;database=RegistryDB;user=root;password=l3nardw12";
+
+        services.AddDbContext<RegistryDbContext>(options =>
+            options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
+
+        var provider = services.BuildServiceProvider();
+        DbContext = provider.GetRequiredService<RegistryDbContext>();
+
+        desktop.MainWindow = new MainWindow
         {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                var services = new ServiceCollection();
-                var connStr = "server=localhost;database=RegistryDB;user=root;password=l3nardw12";
+            DataContext = new LoginViewModel()
+        };
+    }
 
-                services.AddDbContext<RegistryDbContext>(options =>
-                    options.UseMySql(connStr, ServerVersion.AutoDetect(connStr)));
+    base.OnFrameworkInitializationCompleted();
+}
 
-                var provider = services.BuildServiceProvider();
-                var context = provider.GetRequiredService<RegistryDbContext>();
-                // Optional: context.Database.EnsureCreated();
-
-                desktop.MainWindow = new MainWindow();
-            }
-
-            base.OnFrameworkInitializationCompleted();
-        }
     }
 }

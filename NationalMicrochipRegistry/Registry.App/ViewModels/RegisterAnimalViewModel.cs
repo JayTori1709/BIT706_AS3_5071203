@@ -1,10 +1,14 @@
 using ReactiveUI;
 using System.Reactive;
+using Registry.Data.Models;
+using Registry.Data.Services;
 
 namespace RegistryApp.ViewModels
 {
     public class RegisterAnimalViewModel : ViewModelBase
     {
+        private readonly AnimalService _animalService;
+
         private string _animalName;
         private string _species;
         private string _ownerName;
@@ -31,9 +35,21 @@ namespace RegistryApp.ViewModels
 
         public RegisterAnimalViewModel()
         {
+            _animalService = new AnimalService(App.DbContext);
+
             RegisterCommand = ReactiveCommand.Create(() =>
             {
-                // Placeholder: Save animal to database
+                var animal = new Animal
+                {
+                    Name = AnimalName,
+                    Species = Species,
+                    OwnerName = OwnerName
+                };
+
+                _animalService.AddAnimal(animal);
+
+                // Optional: clear fields after save
+                AnimalName = Species = OwnerName = string.Empty;
             });
         }
     }

@@ -7,7 +7,6 @@ namespace RegistryApp
         public MainWindow()
         {
             InitializeComponent();
-            
         }
     }
 }

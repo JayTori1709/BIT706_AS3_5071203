@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
 using Registry.Data.Models;
+using Microsoft.EntityFrameworkCore; // Needed for Include()
 
 namespace Registry.Data.Services
 {
@@ -10,36 +12,31 @@ namespace Registry.Data.Services
     {
         private readonly RegistryDbContext _context;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AnimalService"/> class.
-        /// </summary>
-        /// <param name="context">The database context.</param>
         public AnimalService(RegistryDbContext context)
         {
             _context = context;
         }
 
-        /// <summary>
-        /// Adds a new animal to the database.
-        /// </summary>
-        /// <param name="animal">The animal to add.</param>
         public void AddAnimal(Animal animal)
         {
             _context.Animals.Add(animal);
             _context.SaveChanges();
         }
 
-        /// <summary>
-        /// Finds an animal assigned to a specific microchip.
-        /// </summary>
-        /// <param name="microchipId">The ID of the microchip.</param>
-        /// <returns>The assigned animal, or null if none found.</returns>
         public Animal FindByChip(int microchipId)
         {
+            // Eagerly load the Animal and its Microchip in one query
             return _context.Microchips
-                .Where(m => m.Id == microchipId && m.AnimalId != null)
-                .Select(m => m.AssignedAnimal)
-                .FirstOrDefault();
+                .Include(m => m.AssignedAnimal) // Include the Animal navigation property
+                .FirstOrDefault(m => m.MicrochipId == microchipId)?.AssignedAnimal;
+        }
+
+        public List<Animal> GetAnimalsWithoutChip()
+        {
+            //  Use .Where(a => a.MicrochipId == null)
+            return _context.Animals
+                .Where(a => a.MicrochipId == null)
+                .ToList();
         }
     }
 }

@@ -1,11 +1,11 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:RegistryApp.ViewModels"
              x:Class="RegistryApp.Views.DashboardView">
-  <StackPanel>
-    <TextBlock Text="Welcome to Dashboard" FontSize="20" Margin="10"/>
-    <Button Content="Register Animal" Command="{Binding NavigateRegisterAnimal}" Margin="5"/>
-    <Button Content="Assign Microchip" Command="{Binding NavigateAssignMicrochip}" Margin="5"/>
-    <Button Content="Manage Users" Command="{Binding NavigateManageUsers}" 
-            IsVisible="{Binding IsAdmin}" Margin="5"/>
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Spacing="10">
+    <TextBlock Text="Welcome to the Dashboard" FontSize="20" HorizontalAlignment="Center" />
+    <Button Content="Register Animal" Command="{Binding RegisterAnimalCommand}" />
+    <Button Content="Assign Microchip" Command="{Binding AssignMicrochipCommand}" />
+    <Button Content="Manage Users" Command="{Binding ManageUsersCommand}" />
   </StackPanel>
 </UserControl>

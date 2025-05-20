@@ -17,4 +17,5 @@ public class Microchip
 
     [ForeignKey("AnimalId")]
     public Animal AssignedAnimal { get; set; }
+    public int MicrochipId { get; internal set; }
 }

@@ -1,11 +1,14 @@
 using ReactiveUI;
 using System.Collections.ObjectModel;
 using System.Reactive;
+using Registry.Data.Models;
+using Registry.Data.Services;
 
 namespace RegistryApp.ViewModels
 {
     public class ManageUsersViewModel : ViewModelBase
     {
+        private readonly UserService _userService;
         public ObservableCollection<User> Users { get; } = new();
 
         public ReactiveCommand<User, Unit> DeleteCommand { get; }
@@ -13,21 +16,29 @@ namespace RegistryApp.ViewModels
 
         public ManageUsersViewModel()
         {
+            _userService = new UserService(App.DbContext);
+
+            LoadUsers();
+
             DeleteCommand = ReactiveCommand.Create<User>(user =>
             {
-                Users.Remove(user);
+                _userService.DeleteUser(user.Id);
+                LoadUsers();
             });
 
             AddUserCommand = ReactiveCommand.Create(() =>
             {
-                Users.Add(new User { Username = "newuser", Role = "Clinic" });
+                var newUser = new User { Username = "newuser", PasswordHash = "password", Role = "Clinic" };
+                _userService.AddUser(newUser);
+                LoadUsers();
             });
         }
-    }
 
-    public class User
-    {
-        public string Username { get; set; }
-        public string Role { get; set; }
+        private void LoadUsers()
+        {
+            Users.Clear();
+            foreach (var user in _userService.GetAllUsers())
+                Users.Add(user);
+        }
     }
 }
