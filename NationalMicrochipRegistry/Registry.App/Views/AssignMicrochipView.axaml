@@ -1,10 +1,11 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="RegistryApp.Views.AssignMicrochipView">
-  <StackPanel>
-    <TextBlock Text="Assign Microchip" FontSize="20" Margin="10"/>
+  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Spacing="10">
+    <TextBlock Text="Assign Microchip" FontSize="20" HorizontalAlignment="Center"/>
 
-    <ComboBox ItemsSource="{Binding Animals}" SelectedItem="{Binding SelectedAnimal}" Margin="5">
+    <!-- Animal Dropdown -->
+    <ComboBox ItemsSource="{Binding Animals}" SelectedItem="{Binding SelectedAnimal}">
       <ComboBox.ItemTemplate>
         <DataTemplate>
           <TextBlock Text="{Binding Name}" />
@@ -12,7 +13,8 @@
       </ComboBox.ItemTemplate>
     </ComboBox>
 
-    <ComboBox ItemsSource="{Binding AvailableChips}" SelectedItem="{Binding SelectedChip}" Margin="5">
+    <!-- Microchip Dropdown -->
+    <ComboBox ItemsSource="{Binding AvailableChips}" SelectedItem="{Binding SelectedChip}">
       <ComboBox.ItemTemplate>
         <DataTemplate>
           <TextBlock Text="{Binding SerialNumber}" />
@@ -20,6 +22,10 @@
       </ComboBox.ItemTemplate>
     </ComboBox>
 
-    <Button Content="Assign" Command="{Binding AssignCommand}" Margin="5"/>
+    <!-- Action Buttons -->
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+      <Button Content="Assign" Command="{Binding AssignCommand}" />
+      <Button Content="Back" Command="{Binding BackCommand}" />
+    </StackPanel>
   </StackPanel>
 </UserControl>

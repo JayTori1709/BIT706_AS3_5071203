@@ -13,19 +13,29 @@ namespace RegistryApp.ViewModels
 
         public ObservableCollection<Animal> Animals { get; } = new();
         public ObservableCollection<Microchip> AvailableChips { get; } = new();
-    
 
-        public Animal SelectedAnimal { get; set; }
-        public Microchip SelectedChip { get; set; }
+        private Animal _selectedAnimal;
+        public Animal SelectedAnimal
+        {
+            get => _selectedAnimal;
+            set => this.RaiseAndSetIfChanged(ref _selectedAnimal, value);
+        }
+
+        private Microchip _selectedChip;
+        public Microchip SelectedChip
+        {
+            get => _selectedChip;
+            set => this.RaiseAndSetIfChanged(ref _selectedChip, value);
+        }
 
         public ReactiveCommand<Unit, Unit> AssignCommand { get; }
+        public ReactiveCommand<Unit, Unit> BackCommand { get; }
 
         public AssignMicrochipViewModel()
         {
             _animalService = new AnimalService(App.DbContext);
             _microchipService = new MicrochipService(App.DbContext);
 
-            // Populate dropdowns
             foreach (var animal in _animalService.GetAnimalsWithoutChip())
                 Animals.Add(animal);
 
@@ -38,6 +48,11 @@ namespace RegistryApp.ViewModels
                 {
                     _microchipService.AssignMicrochipToAnimal(SelectedChip.Id, SelectedAnimal.Id);
                 }
+            });
+
+            BackCommand = ReactiveCommand.Create(() =>
+            {
+                MainWindowViewModel.Instance.CurrentView = new DashboardViewModel();
             });
         }
     }

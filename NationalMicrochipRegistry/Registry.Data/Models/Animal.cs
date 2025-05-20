@@ -22,4 +22,5 @@ public class Animal
     public int? MicrochipId { get; set; }  // Make it nullable
     [ForeignKey("MicrochipId")]
     public Microchip AssignedMicrochip { get; set; } // Navigation property
+    public int ClinicId { get; set; }
 }

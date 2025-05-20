@@ -13,6 +13,7 @@ namespace RegistryApp.ViewModels
 
         public ReactiveCommand<User, Unit> DeleteCommand { get; }
         public ReactiveCommand<Unit, Unit> AddUserCommand { get; }
+        public ReactiveCommand<Unit, Unit> BackCommand { get; }
 
         public ManageUsersViewModel()
         {
@@ -32,6 +33,11 @@ namespace RegistryApp.ViewModels
                 _userService.AddUser(newUser);
                 LoadUsers();
             });
+
+              BackCommand = ReactiveCommand.Create(() =>
+    {
+        MainWindowViewModel.Instance.CurrentView = new DashboardViewModel();
+    });
         }
 
         private void LoadUsers()
